@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+
+        <style>
+            #p1 { color: red; }
+            p {font-weight: bold; }
+            .sousligne{ text-decoration: underline; }
+        </style>
+    </head>
+
+    <body>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>    
+                    <th>Prénom</th>    
+                    <th>Age</th>    
+                </tr>
+
+            </thead>
+
+            <tbody>
+                
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="3">FIN</td>
+                </tr>
+            </tfoot>
+        </table>
+
+         <!-- A PROSCRIRE : l'appel funciton par onclick dans le button -->
+         <button id="purge" onclick="purge();">Supprimer</button> 
+         <!-- A PRIVILEGIER : car l'a vue ne doit pas décider de faire ou pas une action. Et de cette manière, le designer pourra integrer ce meme bouton sans casser avec un appel onclick  -->
+         <button id="purge2">Supprimer2</button>
+
+         
+        <form onsubmit="return false;">
+            <div class="form-group row">
+                <label for="name" class="col-sm-2">Nom</label>
+                <div class="col-sm-10">
+                    <input type="text" name="name" id="name">
+                </div> 
+            </div>
+
+            <div class="form-group row">
+                <label for="firstname" class="col-sm-2">Prénom</label>
+                <div class="col-sm-10">
+                    <input type="text" name="firstname" id="firstname">
+                </div> 
+            </div>
+
+            <div class="form-group row">
+                <label for="age" class="col-sm-2">Age</label>
+                <div class="col-sm-10">
+                    <input type="text" name="age" id="age">
+                </div> 
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="addButton">Ajouter utilisateur</button>
+            
+        </form>
+
+
+        <script 
+            type="text/javascript" 
+            src="js/exercice11.js">
+        </script>
+    </body>
+
+</html>
