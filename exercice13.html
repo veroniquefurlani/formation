@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <style>
+            .rouge{ color: red; }
+            .sousligne{ text-decoration: underline;  }
+            .cache { display: none; }
+            tbody tr:first-child { color: blue; }
+            tbody tr:last-child { font-weight: bold; }
+            .material-icons { font-size: 14px; }
+
+        </style>
+    </head>
+
+    <body>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Nom</th>    
+                    <th>Prénom</th>    
+                    <th>Age</th>    
+                    <th>Action</th>  
+                    
+                </tr>
+
+            </thead>
+
+            <tbody>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="3">FIN</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <button id="purge2">Supprimer2</button>
+        <button id="purgeHeader">Purge header</button>
+        <button id="purgeHeader2">Purge header2</button>
+        <button id="purgeTBody">Purge tbody</button>
+
+         
+        <form onsubmit="return false;">
+            <!-- nom -->
+            <div class="form-group row">
+                <label for="name" class="col-sm-2">Nom</label>
+                <div class="col-sm-10">
+                    <input type="text" name="name" id="name" >
+                </div> 
+            </div>
+
+            <!-- prenom -->
+            <div class="form-group row">
+                <label for="firstname" class="col-sm-2">Prénom</label>
+                <div class="col-sm-10">
+                    <input type="text" name="firstname" id="firstname">
+                </div> 
+            </div>
+
+            <!-- age -->
+            <div class="form-group row">
+                <label for="age" class="col-sm-2">Age</label>
+                <div class="col-sm-10">
+                    <input type="text" name="age" id="age">
+                </div> 
+            </div>
+
+            <input id="editIndex" name="editIndex" type="hidden" value="-1">
+            <button type="submit" class="btn btn-primary" id="addButton">Ajouter utilisateur</button>
+            
+        </form>
+
+
+        <script 
+            type="text/javascript" 
+            src="js/exercice13.js">
+        </script>
+    </body>
+
+</html>
