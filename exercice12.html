@@ -8,11 +8,16 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
         <style>
-            #p1 { color: red; }
-            p {font-weight: bold; }
-            .sousligne{ text-decoration: underline; }
+            .rouge{ color: red; }
+            .sousligne{ text-decoration: underline;  }
+            .cache { display: none; }
+            tbody tr:first-child { color: blue; }
+            tbody tr:last-child { font-weight: bold; }
+            .material-icons { font-size: 14px; }
+
         </style>
     </head>
 
@@ -24,12 +29,13 @@
                     <th>Nom</th>    
                     <th>Prénom</th>    
                     <th>Age</th>    
+                    <th>Action</th>  
+                    
                 </tr>
 
             </thead>
 
             <tbody>
-                
             </tbody>
 
             <tfoot>
@@ -39,10 +45,10 @@
             </tfoot>
         </table>
 
-         <!-- A PROSCRIRE : l'appel funciton par onclick dans le button -->
-         <button id="purge" onclick="purge();">Supprimer</button> 
-         <!-- A PRIVILEGIER : car l'a vue ne doit pas décider de faire ou pas une action. Et de cette manière, le designer pourra integrer ce meme bouton sans casser avec un appel onclick  -->
-         <button id="purge2">Supprimer2</button>
+        <button id="purge2">Supprimer2</button>
+        <button id="purgeHeader">Purge header</button>
+        <button id="purgeHeader2">Purge header2</button>
+        <button id="purgeTBody">Purge tbody</button>
 
          
         <form onsubmit="return false;">
@@ -50,7 +56,7 @@
             <div class="form-group row">
                 <label for="name" class="col-sm-2">Nom</label>
                 <div class="col-sm-10">
-                    <input type="text" name="name" id="name" value="plop">
+                    <input type="text" name="name" id="name" >
                 </div> 
             </div>
 
@@ -70,6 +76,7 @@
                 </div> 
             </div>
 
+            <input id="editIndex" name="editIndex" type="hidden" value="-1">
             <button type="submit" class="btn btn-primary" id="addButton">Ajouter utilisateur</button>
             
         </form>

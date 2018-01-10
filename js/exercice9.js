@@ -1,6 +1,5 @@
 function appelServeur(){
     return '{"nom":"sportelli","prenom":"felix"}';
-
 }
 
 // récupére mon objet

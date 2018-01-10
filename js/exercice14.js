@@ -2,7 +2,8 @@ $(document).ready(function(){
 
     $("#page1Button").click(function(){
        $("#page1").hide(); 
-       $("#page2").show(); 
+       $("#page2").show();  
+       $("#page3").hide(); 
     });
 
 
@@ -102,8 +103,8 @@ $(document).ready(function(){
 
         client.sexe = ($("#homme").val() == 0 ) ? "H"  : "F";
         client.nom = $("#nom").val();
-        client.nameFemme = $("#nameFemme").val();
-        client.prenomm = $("#prenom").val();
+        client.nomFemme = $("#nomFemme").val();
+        client.prenom = $("#prenom").val();
         client.age = $("#age").val();
         client.codepostal = $("#codepostal").val();
         client.ville = $("#ville").val();
@@ -127,9 +128,58 @@ $(document).ready(function(){
             } 
      
          // si cela se passe bien :    
-         ).done(function(client) {
-            console.log(client);
+         ).done(function(data) {
 
+            
+
+            // création d'un tableau dans une page 3 avec affichage des dossiers renvoyés par le serveur
+            $("#page1").hide(); 
+            $("#page2").hide(); 
+            $("#page3").show(); 
+            
+            console.log(data);
+            dossiers = JSON.parse(data);
+
+            
+            dossiers.forEach(dossier => {
+
+                $("tbody").append("<tr><td>" + dossier.id 
+                            + " </td><td>" + dossier.nom  + "(" + dossier.nomFemme + ")" 
+                            + " </td><td>" + dossier.prenom   
+                            + " </td><td>" + dossier.age    
+                            + " </td><td>" + dossier.sexe    
+                            + " </td><td>" + dossier.tailleBateau
+                            + " </td><td>" + dossier.assurance  
+                            + " </td><td>" + dossier.casse   
+                            + " </td><td>" + dossier.statut   
+                            + " </td><td>" + dossier.date.mday + " / " +     dossier.date.mon + " / " + dossier.date.year                
+                            + " </td></tr>"
+                );
+
+
+            });
+            console.log(dossiers[0].id);
+            
+           
+
+            // on dessine le tableau
+            let dessineTableau = function(client){
+                console.log("..... " + client);
+
+                let tbody = document.querySelector("tbody");  
+                tbody.innerHTML="";  
+                tbody.innerHTML += "<tr><td>" + user.id + "</td><td>" + user['nom'] + "</td><td>" + user['prenom'] + "</td><td>" + user['age'] + "</td><td>" + user['sexe'] + "</td></tr>";
+
+               
+
+
+              /*  for (let index =0 ; index < user.length; index++){
+                    //const element = user[index];
+                    //console.log(element);
+                    tbody.innerHTML += "<tr><td>" + user.id + "</td><td>" + user['nom'] + "</td><td>" + user['prenom'] + "</td><td>" + user['age'] + "</td><td>" + user['sexe'] + "</td></tr>";
+                }*/
+            }
+            dessineTableau(user);
 
 
 

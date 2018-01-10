@@ -29,7 +29,7 @@
 
                 <!-- sexe -->
                 <div class="form-group row">
-                    <label for="name" class="col-sm-2">Sexe</label>
+                    <label for="sexe" class="col-sm-2">Sexe</label>
                     <div class="col-sm-10">
                         <div class="form-check form-check-inline">
                             <input type="radio" name="sexe" id="femme" value="femme" checked>
@@ -54,9 +54,9 @@
                 <!-- nom de jeune fille -->
                 <div id="nomDeJeuneFille">
                     <div class="form-group row">
-                        <label for="nameFemme" class="col-sm-2">Nom de jeune fille</label>
+                        <label for="nomFemme" class="col-sm-2">Nom de jeune fille</label>
                         <div class="col-sm-10">
-                            <input type="text" name="nameFemme" id="nameFemme" disabled>
+                            <input type="text" name="nomFemme" id="nomFemme" >
                         </div> 
                     </div>
                 </div>
@@ -113,42 +113,68 @@
 
             <div id="page2" style="display: none;">
 
- <!-- interet -->
- <div class="form-group row">
-        <label for="interet" class="col-sm-2">Intérêt</label>
-        <div class="col-sm-10">
-            <select name="interet" id="interet" class="custom-select custom-select-sm" multiple>
-                <option value="assurance voilier">Assurance voilier</option>
-                <option value="devis jet ski">Devis jet ski</option>
-                <option value="complementaire retraite">Complémentaire retraite</option>
-            </select>
-        </div> 
-    </div>
+                <!-- interet -->
+                <div class="form-group row">
+                        <label for="interet" class="col-sm-2">Intérêt</label>
+                        <div class="col-sm-10">
+                            <select name="interet" id="interet" class="custom-select custom-select-sm" multiple>
+                                <option value="assurance">Assurance voilier</option>
+                                <option value="casse">Casse</option>
+                            </select>
+                        </div> 
+                    </div>
 
-    <!-- nb bateau -->
-    <div class="form-group row">
-        <label for="name" class="col-sm-2">Nombre de bateaux</label>
-        <div class="col-sm-10">
-            <input type="number" name="nbbateau" id="nbbateau">
-        </div> 
-    </div>
+                    <!-- nb bateau -->
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-2">Nombre de bateaux</label>
+                        <div class="col-sm-10">
+                            <input type="number" name="nbbateau" id="nbbateau">
+                        </div> 
+                    </div>
 
-    <div id="containerBateau">
-            
-    </div>
-    
-    
+                    <div id="containerBateau">
+                            
+                    </div>
+                    
+                    
 
-    <input id="editIndex" name="editIndex" type="hidden" value="-1">
-    <button type="submit" class="btn btn-primary" id="page2Button">Etape suivante</button>
+                    <input id="editIndex" name="editIndex" type="hidden" value="-1">
+                    <button type="submit" class="btn btn-primary" id="page2Button">Etape suivante</button>
 
 
                 </div>
 
-
-
-
             </form>
+
+            <div id="page3" style="display: none;">
+
+                <table border="1">
+                        <thead>
+                            <tr>
+                                <th>Dossier n°</th>    
+                                <th>Nom (Nom de jeune fille)</th>    
+                                <th>Prénom</th>      
+                                <th>Age</th>      
+                                <th>Sexe</th>      
+                                <th>Taille bateau</th>    
+                                <th>Assurance</th>      
+                                <th>Casse</th>      
+                            </tr>            
+                        </thead>
+            
+                        <tbody>
+                            
+                        </tbody>
+            
+                        <tfoot>
+                           
+                        </tfoot>
+                    </table>
+
+
+            </div>
+
+
 
         <script 
             type="text/javascript" 
