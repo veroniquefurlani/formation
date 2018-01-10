@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <style>
+            .rouge{ color: red; }
+            .sousligne{ text-decoration: underline;  }
+            .cache { display: none; }
+            tbody tr:first-child { color: blue; }
+            tbody tr:last-child { font-weight: bold; }
+            .material-icons { font-size: 14px; }
+
+        </style>
+    </head>
+
+    <body>               
+       
+            <form onsubmit="return false;">
+           
+                <div id="page1">
+
+                <!-- sexe -->
+                <div class="form-group row">
+                    <label for="name" class="col-sm-2">Sexe</label>
+                    <div class="col-sm-10">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="sexe" id="femme" value="femme" checked>
+                            <label for="femme">Femme</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                            <input type="radio" name="sexe" id="homme" value="homme">
+                            <label for="homme">Homme</label>
+                        </div>
+                    </div> 
+                </div>
+
+                <!-- nom -->
+                <div class="form-group row">
+                    <label for="nom" class="col-sm-2">Nom</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="nom" id="nom" >
+                    </div> 
+                </div>
+
+
+                <!-- nom de jeune fille -->
+                <div id="nomDeJeuneFille">
+                    <div class="form-group row">
+                        <label for="nameFemme" class="col-sm-2">Nom de jeune fille</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="nameFemme" id="nameFemme" disabled>
+                        </div> 
+                    </div>
+                </div>
+
+                <!-- prenom -->
+                <div class="form-group row">
+                    <label for="firstname" class="col-sm-2">Prénom</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="prenom" id="prenom">
+                    </div> 
+                </div>
+
+                <!-- age -->
+                <div class="form-group row">
+                    <label for="age" class="col-sm-2">Age</label>
+                    <div class="col-sm-10">
+                        <input type="range" name="age" id="age" min="20" max="99">
+                        <span id="ageTexte">50</span><span>ans</span>
+                    </div> 
+                </div>
+
+                <!-- code postal -->
+                <div class="form-group row">
+                    <label for="codepostal" class="col-sm-2">Code postal</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="codepostal" id="codepostal">
+                    </div>
+
+                </div>
+                <div class="form-group row">  
+                        <label class="col-sm-2"></label>      
+                    <div class="col-sm-5">
+                        <div class="alert alert-danger" style="display:none;" role="alert" id="message" >
+                        
+                        </div>       
+                    </div>
+                </div>
+
+                <!-- ville -->
+                <div class="form-group row">
+                    <label for="firstname" class="col-sm-2">Ville</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="ville" id="ville">
+                    </div> 
+                </div>
+
+                <input id="formPage1" name="formPage1" type="hidden" value="1">
+                
+                <button type="submit" class="btn btn-primary" id="page1Button">validate</button>
+                
+            </div>
+
+
+
+            <div id="page2" style="display: none;">
+
+ <!-- interet -->
+ <div class="form-group row">
+        <label for="interet" class="col-sm-2">Intérêt</label>
+        <div class="col-sm-10">
+            <select name="interet" id="interet" class="custom-select custom-select-sm" multiple>
+                <option value="assurance voilier">Assurance voilier</option>
+                <option value="devis jet ski">Devis jet ski</option>
+                <option value="complementaire retraite">Complémentaire retraite</option>
+            </select>
+        </div> 
+    </div>
+
+    <!-- nb bateau -->
+    <div class="form-group row">
+        <label for="name" class="col-sm-2">Nombre de bateaux</label>
+        <div class="col-sm-10">
+            <input type="number" name="nbbateau" id="nbbateau">
+        </div> 
+    </div>
+
+    <div id="containerBateau">
+            
+    </div>
+    
+    
+
+    <input id="editIndex" name="editIndex" type="hidden" value="-1">
+    <button type="submit" class="btn btn-primary" id="page2Button">Etape suivante</button>
+
+
+                </div>
+
+
+
+
+            </form>
+
+        <script 
+            type="text/javascript" 
+            src="js/exercice14.js">
+        </script>
+    </body>
+
+</html>
